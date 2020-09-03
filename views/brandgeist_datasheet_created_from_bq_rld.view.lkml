@@ -45,6 +45,7 @@ view: brandgeist_datasheet_created_from_bq_rld {
   measure: effective_base {
     type: sum
     sql: ${TABLE}.effectiveBase ;;
+    value_format_name: decimal_0
   }
 
   dimension: hidden_sort {
@@ -165,10 +166,12 @@ view: brandgeist_datasheet_created_from_bq_rld {
   measure: weighted_base {
     type: sum
     sql: ${TABLE}.weightedBase ;;
+    value_format_name: decimal_0
   }
 
   measure: weighted_count {
     type: sum
     sql: ${TABLE}.weightedCount ;;
+    value_format_name: decimal_0
   }
 }
