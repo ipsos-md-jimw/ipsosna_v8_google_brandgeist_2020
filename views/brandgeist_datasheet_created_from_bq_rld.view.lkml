@@ -59,6 +59,11 @@ view: brandgeist_datasheet_created_from_bq_rld {
     sql: ${TABLE}.metricCode ;;
   }
 
+  dimension: metric_without_brand {
+    type: string
+    sql: REPLACE(${metric_code},CONCAT('_',${brand_code}),'') ;;
+  }
+
   dimension: metric_label {
     type: string
     sql: ${TABLE}.metricLabel ;;
@@ -124,8 +129,6 @@ view: brandgeist_datasheet_created_from_bq_rld {
     type: number
     sql: SUM(${stat_result}) OVER ( PARTITION BY ${wave_label})
     ;;
-
-
   }
 
   dimension: stat_test_yoy {
