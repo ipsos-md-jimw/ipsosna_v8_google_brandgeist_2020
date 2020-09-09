@@ -101,6 +101,7 @@ view: brandgeist_datasheet_created_from_bq_rld {
 
   dimension: response_label {
     type: string
+    order_by_field: hidden_sort
     sql: ${TABLE}.responseLabel ;;
   }
 
